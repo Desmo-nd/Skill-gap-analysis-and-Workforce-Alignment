@@ -3,6 +3,7 @@ import { View, Text, TextInput, Image, ScrollView, SafeAreaView } from 'react-na
 import styles from './home.styles';
 import Carousel from '../components/Carousel';
 import Button from '../components/Button';
+import HighDemand  from '../components/HighDemand';
 
 const Home = () => {
   const [skills, setSkills] = useState('');
@@ -72,8 +73,8 @@ const Home = () => {
       </View>
      
 
-
-      <View style={{ padding: 20 }}>
+      <HighDemand />
+      {/* <View style={{ padding: 20 }}>
         <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 10 }}>
           ON DEMAND SKILLS
         </Text>
@@ -84,7 +85,7 @@ const Home = () => {
             </View>
           ))}
         </View>
-      </View>
+      </View> */}
 
     </ScrollView>
     </SafeAreaView>
@@ -92,3 +93,4 @@ const Home = () => {
 };
 
 export default Home;
+

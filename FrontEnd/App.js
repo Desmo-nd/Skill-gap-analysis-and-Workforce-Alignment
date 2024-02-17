@@ -5,7 +5,7 @@ import Home from './screens/Home'; // Update the path to match your file structu
 export default function App() {
   return (
     <View style={styles.container}>
-      <Home />
+      <Home/>
     </View>
   );
 }

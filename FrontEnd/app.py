@@ -6,10 +6,10 @@ import numpy as np
 import pandas as pd
 import string
 import os
-
+from flask_cors import CORS
 
 app = Flask(__name__)
-
+CORS(app)
 
 training = pd.read_csv('/home/dell/Desktop/working_best.csv')
 skills = training['tokenized_skills'].tolist()
@@ -97,10 +97,10 @@ def high_demand_skills():
 
     high_demand_skills = [flattened_skills[i] for i in high_demand_skills_indices][:6]
 
-    return jsonify(high_demand_skills)
+    return jsonify({"high_demand_skills": high_demand_skills})
+
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
-if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='192.168.0.109', port=5000)
+
