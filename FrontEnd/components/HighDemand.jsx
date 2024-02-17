@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View } from 'react-native';
 import { StyleSheet } from 'react-native';
+import { COLORS, SIZES } from '../constants';
 
 
 const HighDemand = () => {
@@ -15,12 +16,12 @@ const HighDemand = () => {
 
     return (
         <View style={styles.container}>
-        <Text style={styles.title}>High Demand Skills:</Text>
-        {highDemandSkills.map((skill, index) => (
-            <View key={index} style={styles.skillContainer}>
-                <Text style={styles.skill}>{skill}</Text>
-            </View>
-        ))}
+            <Text style={styles.title}>High Demand Skills:</Text>
+            {highDemandSkills.map((skill, index) => (
+                <View key={index} style={[styles.skillContainer, index === 0 && styles.firstSkill]}>
+                    <Text style={styles.skill}>{skill}</Text>
+                </View>
+            ))}
     </View>
     );
 };
@@ -28,7 +29,7 @@ const HighDemand = () => {
 const styles = StyleSheet.create({
     container: {
         padding: 10,
-        backgroundColor: '#f0f0f0',
+        backgroundColor: COLORS.secondary,
         borderRadius: 5,
         margin: 10,
     },
@@ -37,14 +38,20 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 10,
     },
+    firstSkill: {
+        backgroundColor: COLORS.red,
+    },
     skillContainer: {
-        backgroundColor: '#fff',
+        height: SIZES.xLarge*9,
+        backgroundColor: COLORS.primary,
         padding: 5,
         borderRadius: 5,
         marginBottom: 5,
     },
     skill: {
         fontSize: 16,
+        color: '#fff',
+        
     },
 });
 

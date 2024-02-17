@@ -7,6 +7,8 @@ import pandas as pd
 import string
 import os
 from flask_cors import CORS
+import logging
+
 
 app = Flask(__name__)
 CORS(app)
@@ -68,8 +70,11 @@ def predict():
         # Remove punctuation from the skill
         clean_skill = remove_punctuation(skill)
         predictions.append({"Skill": clean_skill, "Demand Level": demand_level})
+  # Log the predictions
+    app.logger.info('Predictions: %s', predictions)
+    return jsonify({"predictions": predictions})
 
-    return send_file('../FrontEnd/screens/Results.jsx')
+
 
 def remove_punctuation(skill):
     return ''.join([char for char in skill if char not in string.punctuation])
@@ -102,5 +107,7 @@ def high_demand_skills():
 
 
 if __name__ == '__main__':
+    logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
+
     app.run(host='192.168.0.109', port=5000)
 
