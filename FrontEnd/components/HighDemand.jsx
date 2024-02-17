@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
+
 
 const HighDemand = () => {
     const [highDemandSkills, setHighDemandSkills] = useState([]);
@@ -12,13 +14,38 @@ const HighDemand = () => {
     }, []);
 
     return (
-        <View>
-            <Text>High Demand Skills:</Text>
-            {highDemandSkills.map((skill, index) => (
-                <Text key={index}>{skill}</Text>
-            ))}
-        </View>
+        <View style={styles.container}>
+        <Text style={styles.title}>High Demand Skills:</Text>
+        {highDemandSkills.map((skill, index) => (
+            <View key={index} style={styles.skillContainer}>
+                <Text style={styles.skill}>{skill}</Text>
+            </View>
+        ))}
+    </View>
     );
 };
+
+const styles = StyleSheet.create({
+    container: {
+        padding: 10,
+        backgroundColor: '#f0f0f0',
+        borderRadius: 5,
+        margin: 10,
+    },
+    title: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginBottom: 10,
+    },
+    skillContainer: {
+        backgroundColor: '#fff',
+        padding: 5,
+        borderRadius: 5,
+        marginBottom: 5,
+    },
+    skill: {
+        fontSize: 16,
+    },
+});
 
 export default HighDemand;
