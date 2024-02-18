@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, Text } from 'react-native';
-
+import { View, TextInput, Text, StyleSheet } from 'react-native';
+import Button from './Button';
+import { SIZES } from '../constants';
 const Predict = () => {
     const [skills, setSkills] = useState('');
     const [result, setResult] = useState('');
@@ -31,11 +32,13 @@ const Predict = () => {
     };
 
     return (
-        <View>
+        <View style={{marginTop:-40}}>
             <TextInput
                 placeholder="Enter your skills"
+                placeholderTextColor={"#fff"}
                 value={skills}
                 onChangeText={setSkills}
+                style={styles.textcontainer}
             />
             <Button
                 title="Predict"
@@ -45,5 +48,20 @@ const Predict = () => {
         </View>
     );
 };
+
+const styles = StyleSheet.create({
+  textcontainer:{
+    width:SIZES.width*0.8,
+    marginHorizontal:'3%',
+    width:'93%',
+    height: SIZES.xxLarge,
+    border: 1,
+    borderColor: "#fff",
+    borderWidth: 1,
+    borderRadius: 5,
+    paddingHorizontal: 15,
+    color: "#fff"
+  }
+})
 
 export default Predict;

@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     },
 
     btnTxt:{
-        fontWeight:'bold',
+        fontFamily:'bold',
         color:COLORS.secondary,
         fontSize:18,
         marginVertical:10

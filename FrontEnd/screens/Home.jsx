@@ -1,35 +1,45 @@
 
-import { View, Text, TextInput, Image, ScrollView, SafeAreaView } from 'react-native';
+import { View, Text, TextInput, Image, ScrollView, SafeAreaView, StatusBar } from 'react-native';
 import styles from './home.styles';
 import Carousel from '../components/Carousel';
-import Button from '../components/Button';
 import HighDemand  from '../components/HighDemand';
 import Predict from '../components/Predict';
+import { COLORS } from '../constants';
+import { Ionicons } from '@expo/vector-icons';
+
+
 
 const Home = () => {
   return (
     <SafeAreaView>
     <ScrollView>
+      <StatusBar barStyle="light-content"  backgroundColor={COLORS.primary}/>
      
       <View style={styles.firstContainer}>
-        <View>
+        <View style={styles.logobar}>
           <Text style={styles.logo}>Skill<Text style={{ color: 'rgb(160, 33, 33)' }}>Up</Text></Text>
+          <Ionicons name="menu" size={40} color={COLORS.secondary}/>
         </View>
         <View style={styles.innerContainer}>
-          <View style={styles.welcome}>
-            <Text style={styles.header}>Build Your</Text>
-            <Text style={styles.career}>Career</Text>
-            <Text style={styles.description}>
-              {/* Take the first step towards building a successful career. */}
-              Enter your skills below to explore new opportunities and bridge the skill gap!
-            </Text>
-          </View>         
-          <Predict/>
+          <View style={styles.decoContainer}>
+            <View style={styles.welcome}>
+              <Text style={styles.header}>Build Your</Text>
+              <Text style={styles.career}>Career</Text>
+              <Text style={styles.description}>
+                {/* Take the first step towards building a successful career. */}
+                Enter your skills below to explore new opportunities and bridge the skill gap!
+              </Text>
+            </View> 
+            <View style={styles.deco}>
+              <View style={styles.innerDeco}></View>
+            </View>        
+          </View>
           <Carousel />  
+         
+          <Predict/>
         </View>
       </View>
-     
-
+    
       <HighDemand />
 
     </ScrollView>

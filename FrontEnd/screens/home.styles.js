@@ -7,51 +7,75 @@ const styles = StyleSheet.create({
         padding:20,
         width: SIZES.width,
     },
-
+    logobar:{
+        width: SIZES.width*0.87,
+        marginHorizontal:'3%',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
     innerContainer:{
         width: SIZES.width * 0.88,
     },
     logo:{
         fontSize: 30,
-        fontWeight: 'bold',
+        fontFamily: 'bold',
         color: COLORS.secondary,
-        marginTop: SIZES.medium,
-        fontFamily: 'sans-serif-light',
+        fontFamily: 'bold',
     },
-
+    decoContainer:{
+        flexDirection: 'row',
+        width:SIZES.width
+    },
+    welcome:{
+        marginTop: SIZES.medium,
+        marginBottom: SIZES.medium,
+        width: SIZES.width * 0.88,
+    },
     header:{
         fontSize: 44,
         textAlign : 'center',
         color: '#fff',
-        fontWeight: 'semibold',
+        fontFamily: 'semibold',
     },
 
     career:{
+        marginTop: -30,
         fontSize: 66,
-        fontWeight: 'bold',
+        fontFamily: 'bold',
         textAlign : 'center',
-        color: '#fff',
+        color: COLORS.secondary,
     },
-
-    welcome:{
-        marginTop: SIZES.medium,
-        marginBottom: SIZES.medium,
-    },
-
     description:{
         fontSize: 18,
-        color: '#fff',
+        color: COLORS.secondary,
         textAlign: 'center',
-        fontFamily: 'sans-serif-light',
+        fontFamily:'regular',
     },
 
-    Btn:{
+    deco:{
         backgroundColor: COLORS.red,
-        color: COLORS.primary,
-        padding: 10,
-        borderRadius: 5,
-        marginTop: 10,
-    }
+        height: 100,
+        // width: 50,
+        marginLeft:-4,
+        borderBottomLeftRadius:999,
+        borderTopLeftRadius:999,
+        marginTop:20,
+    },
+
+    innerDeco:{
+        backgroundColor: COLORS.primary,
+        height: 80,
+        width: 40,
+        marginLeft:10,
+        borderBottomLeftRadius:999,
+        borderTopLeftRadius:999,
+        marginTop:10
+    },
+
+  
+    
+
+
 
 
 
