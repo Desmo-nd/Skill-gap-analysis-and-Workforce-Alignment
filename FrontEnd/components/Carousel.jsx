@@ -43,9 +43,6 @@ const Carousel = () => {
         </View>
     );
 };
-
-export default Carousel;
-
 const styles = StyleSheet.create({
     carouselContainer: {
         flex: 1,
@@ -59,7 +56,7 @@ const styles = StyleSheet.create({
         marginLeft:-20,
         borderBottomRightRadius:999,
         borderTopRightRadius:999,
-        marginTop:-27,
+        marginTop:-35,
     },
 
     innerDeco1:{
@@ -71,3 +68,6 @@ const styles = StyleSheet.create({
         marginTop:10
     },
 });
+
+export default Carousel;
+

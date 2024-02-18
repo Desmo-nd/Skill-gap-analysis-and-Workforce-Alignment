@@ -1,5 +1,5 @@
 
-import { View, Text, TextInput, Image, ScrollView, SafeAreaView, StatusBar } from 'react-native';
+import { View, Text, TextInput, Image, ScrollView, SafeAreaView, StatusBar, TouchableOpacity } from 'react-native';
 import styles from './home.styles';
 import Carousel from '../components/Carousel';
 import HighDemand  from '../components/HighDemand';
@@ -39,7 +39,21 @@ const Home = () => {
           <Predict/>
         </View>
       </View>
-    
+      <TouchableOpacity>
+        <Ionicons
+          name="arrow-down"
+          size={30}
+          color="white"
+          backgroundColor={COLORS.red}
+
+          style={{
+            alignSelf: 'center',
+            marginTop: -22,
+            borderRadius: 999,
+            padding: 8,
+          }}
+        />
+      </TouchableOpacity>
       <HighDemand />
 
     </ScrollView>

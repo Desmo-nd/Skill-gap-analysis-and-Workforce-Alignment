@@ -32,7 +32,7 @@ const Predict = () => {
     };
 
     return (
-        <View style={{marginTop:-40}}>
+        <View style={{marginTop:-30}}>
             <TextInput
                 placeholder="Enter your skills"
                 placeholderTextColor={"#fff"}
