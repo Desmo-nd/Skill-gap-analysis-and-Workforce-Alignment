@@ -35,7 +35,6 @@ const Home = () => {
             </View>        
           </View>
           <Carousel />  
-         
           <Predict/>
         </View>
       </View>

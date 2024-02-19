@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Text, View } from 'react-native';
 import { StyleSheet } from 'react-native';
 import { COLORS, SIZES } from '../constants';
+import image1 from '../assets/images/skillcon.png';  
 
 
 const HighDemand = () => {
@@ -19,6 +20,9 @@ const HighDemand = () => {
             <Text style={styles.title}>High Demand Skills</Text>
             {highDemandSkills.map((skill, index) => (
                 <View key={index} style={[styles.skillContainer, index === 0 && styles.firstSkill]}>
+                    <View>
+                        <img src="asssets/" alt="" />
+                    </View>
                     <Text style={styles.skill}>{skill}</Text>
                 </View>
             ))}
@@ -38,7 +42,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: SIZES.small,
         textAlign: 'center',
-        margingTop: SIZES.small,
+        marginTop: SIZES.small,
     },
     firstSkill: {
         backgroundColor: COLORS.red,

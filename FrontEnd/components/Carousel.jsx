@@ -6,7 +6,6 @@ import image1 from '../assets/images/engineering.jpeg';
 import image2 from '../assets/images/gears.jpeg';
 import image3 from '../assets/images/trends.jpeg';
 import image4 from '../assets/images/coding.jpeg';
-import image5 from '../assets/images/bet.jpeg';
 
 const Carousel = () => {
     const slides = [
@@ -14,7 +13,6 @@ const Carousel = () => {
         image2,
         image3,
         image4,
-        image5,
     ];
 
     const aspectRatio = 2 / 2; // width / height

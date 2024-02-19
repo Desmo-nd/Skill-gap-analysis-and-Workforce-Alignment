@@ -51,16 +51,14 @@ const Predict = () => {
 
 const styles = StyleSheet.create({
   textcontainer:{
-    width:SIZES.width*0.8,
-    marginHorizontal:'3%',
-    width:'93%',
-    height: SIZES.xxLarge,
-    border: 1,
-    borderColor: "#fff",
-    borderWidth: 1,
-    borderRadius: 5,
-    paddingHorizontal: 15,
-    color: "#fff"
+        width: "93%",
+        marginHorizontal: "3%",
+        height: 44,
+        borderWidth: 1,
+        borderColor: "#fff",
+        borderRadius: 5,
+        paddingHorizontal: 15,
+        color: "#fff"
   }
 })
 

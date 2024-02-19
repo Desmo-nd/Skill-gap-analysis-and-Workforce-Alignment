@@ -18,7 +18,6 @@ const styles = StyleSheet.create({
     },
     logo:{
         fontSize: 30,
-        fontFamily: 'bold',
         color: COLORS.secondary,
         fontFamily: 'bold',
     },
