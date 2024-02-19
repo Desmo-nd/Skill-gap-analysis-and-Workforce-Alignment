@@ -59,7 +59,8 @@ const Home = () => {
       <WorkWith/>
       <Role/>
       <View style={styles.footer}>
-        <Text style={styles.footerText}>© 2024 <Text style={{ color: COLORS.red }}>SkillUp</Text> All rights reserved.</Text>
+        <Text style={styles.footerText}>© 2024 
+        <Text style={{ color: COLORS.red }}>SkillUp</Text> All rights reserved.</Text>
       </View>
     </ScrollView>
     </SafeAreaView>

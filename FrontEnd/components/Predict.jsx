@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
-import { View, TextInput, Text, StyleSheet } from 'react-native';
+import { View, TextInput, Text, StyleSheet, Modal } from 'react-native';
 import Button from './Button';
 import { SIZES } from '../constants';
+
+
 const Predict = () => {
     const [skills, setSkills] = useState('');
     const [result, setResult] = useState('');
+    const [modalVisible, setModalVisible] = useState(false);
+
 
     const predictSkills = async () => {
         try {
@@ -18,6 +22,7 @@ const Predict = () => {
 
             const data = await response.json();
             setResult(renderPredictions(data.predictions));
+            setModalVisible(true);
         } catch (error) {
             console.error('Error predicting skills:', error);
         }
@@ -44,7 +49,22 @@ const Predict = () => {
                 title="Predict"
                 onPress={predictSkills}
             />
-            <Text>{result}</Text>
+            <View style={styles.resultsContainer}>
+                {/* <Text>{result}</Text> */}
+                <Modal
+                    animationType="slide"
+                    transparent={true}
+                    visible={modalVisible}
+                    onRequestClose={() => {
+                        setModalVisible(false);
+                    }}
+                >
+                    <View style={styles.modalContainer}>
+                        <Text style={styles.results}>{result}</Text>
+                        <Button title="Close" onPress={() => setModalVisible(false)} />
+                    </View>
+                </Modal>
+            </View>
         </View>
     );
 };
@@ -59,6 +79,19 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         paddingHorizontal: 15,
         color: "#fff"
+  },
+  modalContainer:{
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#000000BB',
+  },
+  results:{
+    fontSize: 26,
+    fontFamily: 'semibold',
+    color: '#fff',
+    textAlign: 'center',
+    marginBottom: 20,
   }
 })
 
