@@ -1,11 +1,12 @@
 
-import { View, Text, TextInput, Image, ScrollView, SafeAreaView, StatusBar, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, SafeAreaView, StatusBar, TouchableOpacity } from 'react-native';
 import styles from './home.styles';
 import Carousel from '../components/Carousel';
 import HighDemand  from '../components/HighDemand';
 import Predict from '../components/Predict';
 import { COLORS } from '../constants';
 import { Ionicons } from '@expo/vector-icons';
+import WorkWith from '../components/WorkWith';
 
 
 
@@ -54,6 +55,7 @@ const Home = () => {
         />
       </TouchableOpacity>
       <HighDemand />
+      <WorkWith/>
 
     </ScrollView>
     </SafeAreaView>
