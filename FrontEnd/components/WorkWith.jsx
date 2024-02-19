@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Text, View, Image, Button } from 'react-native';
+import React from 'react';
+import { Text, View} from 'react-native';
 import { StyleSheet } from 'react-native';
 import { COLORS, SIZES } from '../constants';
 
@@ -8,7 +8,11 @@ const WorkWith = () => {
     return (
         <View style={styles.firstContainer}>
             <View style={styles.deco1}>
-              <View style={styles.innerDeco1}></View>
+                <View style={{flexDirection:"row"}}>
+                <View style={styles.innerDeco1}></View>
+              <Text style={styles.work}>WHO WE WORK WITH</Text>
+                </View>
+             
             </View> 
            <View style={styles.deco}>
               <View style={styles.innerDeco}></View>
@@ -43,6 +47,15 @@ const styles = StyleSheet.create({
         borderBottomRightRadius:999,
         borderTopRightRadius:999,
         marginTop:10
+    },
+    work:{
+        width: SIZES.width * 0.83,
+        textAlign:"center",
+        color:COLORS.secondary,
+        fontSize:20,
+        fontFamily:'bold',
+        marginTop:20
+    
     },
     deco:{
         backgroundColor: COLORS.red,

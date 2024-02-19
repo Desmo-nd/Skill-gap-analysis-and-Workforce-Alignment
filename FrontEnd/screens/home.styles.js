@@ -70,8 +70,18 @@ const styles = StyleSheet.create({
         borderTopLeftRadius:999,
         marginTop:10
     },
-
-  
+    footer:{
+        backgroundColor: COLORS.primary,
+        height: 40,
+        width: SIZES.width,
+        alignItems: 'center',
+    },
+    footerText:{
+        color: COLORS.secondary,
+        fontFamily: 'regular',
+        fontSize: 16,
+        marginTop:10,
+    },
     
 
 

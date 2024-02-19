@@ -2,7 +2,7 @@ import { StyleSheet, View } from "react-native";
 import React from "react";
 import { SliderBox } from "react-native-image-slider-box"; 
 import { COLORS, SIZES } from "../constants";
-import image1 from '../assets/images/engineering.jpeg';    
+import image1 from '../assets/images/ai.jpg';    
 import image2 from '../assets/images/gears.jpeg';
 import image3 from '../assets/images/trends.jpeg';
 import image4 from '../assets/images/coding.jpeg';

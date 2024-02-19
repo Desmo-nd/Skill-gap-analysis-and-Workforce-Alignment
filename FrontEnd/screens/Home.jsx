@@ -7,6 +7,7 @@ import Predict from '../components/Predict';
 import { COLORS } from '../constants';
 import { Ionicons } from '@expo/vector-icons';
 import WorkWith from '../components/WorkWith';
+import Role from '../components/Role';
 
 
 
@@ -35,7 +36,7 @@ const Home = () => {
               <View style={styles.innerDeco}></View>
             </View>        
           </View>
-          <Carousel />  
+          <Carousel/>  
           <Predict/>
         </View>
       </View>
@@ -56,7 +57,10 @@ const Home = () => {
       </TouchableOpacity>
       <HighDemand />
       <WorkWith/>
-
+      <Role/>
+      <View style={styles.footer}>
+        <Text style={styles.footerText}>© 2024 <Text style={{ color: COLORS.red }}>SkillUp</Text> All rights reserved.</Text>
+      </View>
     </ScrollView>
     </SafeAreaView>
   );

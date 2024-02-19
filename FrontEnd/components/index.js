@@ -4,6 +4,7 @@ import HighDemand from "./HighDemand";
 import Predict from "./Predict";
 import LinkButton from "./LinkButton";
 import WorkWith from "./WorkWith";
+import Role from "./Role";
 
 
 
@@ -14,4 +15,5 @@ export {
     Predict,
     LinkButton,
     WorkWith,
+    Role
 };

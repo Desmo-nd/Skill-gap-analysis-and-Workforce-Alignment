@@ -16,7 +16,7 @@ const HighDemand = () => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>On Demand Skills</Text>
+            <Text style={styles.title}>ON DEMAND SKILLS</Text>
             {highDemandSkills.map((skill, index) => (
                 <View key={index} style={[styles.skillContainer, index === 0 && styles.firstSkill]}>
                     <View>
@@ -42,16 +42,16 @@ const HighDemand = () => {
 const styles = StyleSheet.create({
     container: {
         padding: SIZES.small,
-        // backgroundColor: COLORS.secondary,
         borderRadius: 5,
         margin: SIZES.small,
     },
     title: {
-        fontSize: SIZES.large,
-        fontFamily: 'semibold',
+        fontSize:20,
+        fontFamily:'bold',
         marginBottom: SIZES.small,
         textAlign: 'center',
         marginTop: SIZES.small,
+        color: COLORS.primary,
     },
     firstSkill: {
         backgroundColor: COLORS.red,
