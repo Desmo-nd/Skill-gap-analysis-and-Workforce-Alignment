@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Text, View, StyleSheet, ScrollView, Image, TouchableOpacity } from 'react-native';
 import { COLORS, SIZES } from '../constants';
 import Universities from './Universities';
+import Individuals from './Individuals';
 
 const WorkWith = () => {
     return (
@@ -13,7 +14,8 @@ const WorkWith = () => {
                 </View>
              
             </View> 
-            <Universities/>
+            {/* <Universities/> */}
+            <Individuals/>
             <View style={styles.deco}>
               <View style={styles.innerDeco}></View>
             </View>

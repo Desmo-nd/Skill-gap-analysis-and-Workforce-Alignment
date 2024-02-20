@@ -6,6 +6,9 @@ import LinkButton from "./LinkButton";
 import WorkWith from "./WorkWith";
 import Role from "./Role";
 import Universities from "./Universities";
+import Individuals from "./Individuals";
+
+
 
 
 
@@ -17,5 +20,6 @@ export {
     LinkButton,
     WorkWith,
     Role,
-    Universities
+    Universities,
+    Individuals
 };

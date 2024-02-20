@@ -34,7 +34,6 @@ const Universities = () => {
 
 const styles = StyleSheet.create({
    container:{
-
        width: SIZES.width*0.90,
        height: 200,
        marginTop: -25,
