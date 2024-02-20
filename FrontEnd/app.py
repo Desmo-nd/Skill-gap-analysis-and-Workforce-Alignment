@@ -13,7 +13,7 @@ import logging
 app = Flask(__name__)
 CORS(app)
 
-training = pd.read_csv('/home/dell/Desktop/working_best.csv')
+training = pd.read_csv('working_best.csv')
 skills = training['tokenized_skills'].tolist()
 
 # Feature extraction using TF-IDF

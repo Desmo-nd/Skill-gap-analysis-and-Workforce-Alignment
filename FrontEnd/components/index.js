@@ -5,6 +5,7 @@ import Predict from "./Predict";
 import LinkButton from "./LinkButton";
 import WorkWith from "./WorkWith";
 import Role from "./Role";
+import Universities from "./Universities";
 
 
 
@@ -15,5 +16,6 @@ export {
     Predict,
     LinkButton,
     WorkWith,
-    Role
+    Role,
+    Universities
 };

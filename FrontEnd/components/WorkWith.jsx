@@ -1,20 +1,20 @@
-import React from 'react';
-import { Text, View} from 'react-native';
-import { StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { Text, View, StyleSheet, ScrollView, Image, TouchableOpacity } from 'react-native';
 import { COLORS, SIZES } from '../constants';
+import Universities from './Universities';
 
 const WorkWith = () => {
-
     return (
         <View style={styles.firstContainer}>
             <View style={styles.deco1}>
                 <View style={{flexDirection:"row"}}>
                 <View style={styles.innerDeco1}></View>
-              <Text style={styles.work}>WHO WE WORK WITH</Text>
+                    <Text style={styles.work}>WHO WE WORK WITH</Text>
                 </View>
              
             </View> 
-           <View style={styles.deco}>
+            <Universities/>
+            <View style={styles.deco}>
               <View style={styles.innerDeco}></View>
             </View>
               
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
         marginRight: -30,
         borderBottomLeftRadius:999,
         borderTopLeftRadius:999,
-        marginTop:120,
+        marginTop:-50,
     },
 
     innerDeco:{
