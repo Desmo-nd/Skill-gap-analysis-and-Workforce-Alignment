@@ -1,6 +1,7 @@
 import React from "react";
-import { StyleSheet, View, Text, Image, ScrollView } from "react-native";   
-import { COLORS, SIZES } from "../constants";
+import { View, Text, Image } from "react-native"; 
+import styles from "./carousel.styles";
+import { SIZES } from "../constants";
 
 
 const Universities = () => {
@@ -32,43 +33,5 @@ const Universities = () => {
   );
 };
 
-const styles = StyleSheet.create({
-   container:{
-       width: SIZES.width*0.90,
-       height: 210,
-       marginTop: -25,
-       backgroundColor:"#ffb366",
-       padding: 20,
-       borderRadius: 20,
-       zIndex: 1,
-   },
-   carouselCont:{
-       flexDirection: "row",
-   },
-   textContainer:{
-       width: SIZES.width*0.50,
-   },
-   title:{
-       fontSize: 25,
-       color: COLORS.red,
-       fontFamily: "bold",
-       textAlign: "center",
-   },
-   description:{
-       fontSize: 17,
-       color: COLORS.primary,
-       fontFamily: "regular",
-       marginHorizontal: 5,
-       
-   },
-   imageContainer:{
-       marginLeft:-20,
-       borderRadius:20,
-
-       marginTop: -20,
-       backgroundColor: "#000000AA"
-       
-   }
-});
 
 export default Universities;
