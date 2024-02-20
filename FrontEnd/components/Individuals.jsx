@@ -13,7 +13,7 @@ const Individuals = () => {
                 source={require("../assets/images/Individuals.jpeg")}
                 style={{
                     width: SIZES.width*0.45,
-                    height: SIZES.height*0.218,
+                    height: SIZES.height*0.229,
                     borderTopLeftRadius:20,
                     borderBottomLeftRadius:20,
                 }}
@@ -35,7 +35,7 @@ const Individuals = () => {
 const styles = StyleSheet.create({
     container:{
         width: SIZES.width*0.90,
-        height: 200,
+        height: 210,
         marginTop: -25,
         backgroundColor:"#ffdab3",
         padding: 20,

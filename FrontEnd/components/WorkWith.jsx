@@ -3,6 +3,7 @@ import { Text, View, StyleSheet, ScrollView, Image, TouchableOpacity } from 'rea
 import { COLORS, SIZES } from '../constants';
 import Universities from './Universities';
 import Individuals from './Individuals';
+import Government from './Government';
 
 const WorkWith = () => {
     return (
@@ -15,7 +16,8 @@ const WorkWith = () => {
              
             </View> 
             {/* <Universities/> */}
-            <Individuals/>
+            {/* <Individuals/> */}
+            <Government/>
             <View style={styles.deco}>
               <View style={styles.innerDeco}></View>
             </View>

@@ -7,6 +7,7 @@ import WorkWith from "./WorkWith";
 import Role from "./Role";
 import Universities from "./Universities";
 import Individuals from "./Individuals";
+import Government from "./Government";
 
 
 
@@ -21,5 +22,6 @@ export {
     WorkWith,
     Role,
     Universities,
-    Individuals
+    Individuals,
+    Government
 };
