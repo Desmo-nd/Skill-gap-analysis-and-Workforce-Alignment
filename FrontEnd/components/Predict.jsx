@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { View, TextInput, Text, StyleSheet, Modal } from 'react-native';
 import Button from './Button';
-import { SIZES } from '../constants';
 
 
 const Predict = () => {

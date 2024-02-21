@@ -33,3 +33,11 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+# ignoring all the dataset files
+job_descriptions.csv
+cleaned_data.csv
+working_part.csv
+dataset_token.csv
+working_with.csv
+working_best.csv
