@@ -39,8 +39,10 @@ const Carousel = () => {
               <View style={styles.innerDeco1}></View>
             </View>   
         </View>
-    );
-};
+    )
+}
+export default Carousel;
+ 
 const styles = StyleSheet.create({
     carouselContainer: {
         flex: 1,
@@ -67,5 +69,5 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Carousel;
+
 
