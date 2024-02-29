@@ -4,8 +4,8 @@ import { COLORS, SIZES } from "../constants";
 
 const LinkButton = ({ title, onPress }) => {
   const { width } = useWindowDimensions();
-  const isSmallScreen = width <= 500; // Define small screens as screens with width less than or equal to 500
-  const buttonWidth = isSmallScreen ? '33%' : '40%'; // Set button width based on screen size
+  const isSmallScreen = width <= 500; 
+  const buttonWidth = isSmallScreen ? '33%' : '40%'; 
   const fontSize = isSmallScreen ? 18 : 16;
   return (
     <TouchableOpacity 

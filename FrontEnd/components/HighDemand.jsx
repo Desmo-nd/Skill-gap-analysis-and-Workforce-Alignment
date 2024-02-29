@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, Image, Button, useWindowDimensions } from 'react-native';
+import { Text, View, Image, Dimensions, useWindowDimensions } from 'react-native';
 import { StyleSheet } from 'react-native';
 import { COLORS, SIZES } from '../constants';
 import LinkButton from './LinkButton';
@@ -41,14 +41,18 @@ const HighDemand = () => {
     );
 };
 
+const { width } = Dimensions.get('window');
+const isBigScreen = width >= 1050;
 const styles = StyleSheet.create({
     container: {
+        width: isBigScreen ? SIZES.width * 0.8 : '100%', 
         padding: SIZES.small,
         borderRadius: 5,
         margin: SIZES.small,
         flexDirection: 'row',
         flexWrap: 'wrap',
         justifyContent: 'space-between',
+        marginHorizontal:"auto"
     },
     title: {
         fontSize: 20,

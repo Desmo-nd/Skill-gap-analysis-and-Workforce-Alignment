@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image} from 'react-native';
+import { Text, View, Image, Dimensions} from 'react-native';
 import { StyleSheet } from 'react-native';
 import { COLORS, SIZES } from '../constants';
 
@@ -26,11 +26,15 @@ const Role = () => {
     );
 };
 
+const { width } = Dimensions.get('window');
+const isBigScreen = width >= 1050;
 const styles = StyleSheet.create({
     firstContainer:{
+        width: isBigScreen ? SIZES.width * 0.8 : '100%', 
         padding:SIZES.small,
         borderRadius:5,
         margin:SIZES.small,    
+        marginHorizontal:"auto"
     },
     role:{
         fontSize:30,
