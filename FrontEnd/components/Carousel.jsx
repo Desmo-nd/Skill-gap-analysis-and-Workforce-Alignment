@@ -29,7 +29,7 @@ const Carousel = () => {
                 ImageComponentStyle={{
                     borderRadius: 15, 
                     width: isBigScreen ? SIZES.width * 0.8 * 0.84 : SIZES.width * 0.83,
-                    height: isBigScreen ? (SIZES.width * 0.8 * 0.93 * aspectRatio) : (SIZES.width * 0.93 * aspectRatio),
+                    height: isBigScreen ? (SIZES.width * 0.8 * 0.33 * aspectRatio) : (SIZES.width * 0.93 * aspectRatio),
                     marginTop: 5,
                 }}
                 autoplay

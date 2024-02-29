@@ -1,20 +1,23 @@
 import React from "react";
-import { View, Text, Image } from "react-native";   
+import { View, Text, Image, Dimensions } from "react-native";   
 import styles from "./carousel.styles";
 import { SIZES } from "../constants";
 
 
 const Individuals = () => {
+    const { width } = Dimensions.get('window');
+    const isBigScreen = width >= 1050;
+
     return (
-    <View style={styles.container}>
+    <View style={[styles.container, isBigScreen && styles.containerBigScreen]}>
     
       <View style={styles.carouselCont}>
       <View style={styles.imageContainer}>
             <Image
                 source={require("../assets/images/Individuals.jpeg")}
                 style={{
-                    width: SIZES.width*0.45,
-                    height: SIZES.height*0.229,
+                    width: isBigScreen ? SIZES.width * 0.5 : SIZES.width * 0.45,
+                    height: isBigScreen ? SIZES.height * 0.3 : SIZES.height * 0.229,
                     borderTopLeftRadius:20,
                     borderBottomLeftRadius:20,
                 }}

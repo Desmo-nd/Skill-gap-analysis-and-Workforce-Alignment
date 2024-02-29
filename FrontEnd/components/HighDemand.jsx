@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     bigScreenStyle: {
         margin: 10,
         padding: 10,
-        height: 350,
+        height: 260,
     },
     skill: {
         fontSize: 16,
