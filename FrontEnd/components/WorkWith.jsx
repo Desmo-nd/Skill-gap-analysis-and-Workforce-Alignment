@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { Text, View, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, ScrollView, Dimensions } from 'react-native';
 import { COLORS, SIZES } from '../constants';
 import Universities from './Universities';
 import Individuals from './Individuals';
@@ -77,18 +77,21 @@ const WorkWith = () => {
     );
 };
 
+const { width } = Dimensions.get('window');
+const isBigScreen = width >= 1050;
 const styles = StyleSheet.create({
     firstContainer: {
         backgroundColor: COLORS.primary,
         padding: 20,
-        width: SIZES.width,
+        width: isBigScreen ? SIZES.width * 0.8 : '100%', 
+        marginHorizontal:"auto",
         height: 350
     },
     deco1: {
         backgroundColor: COLORS.red,
         height: 100,
         width: 50,
-        marginLeft: -30,
+        marginLeft: -20,
         borderBottomRightRadius: 999,
         borderTopRightRadius: 999,
     },
@@ -113,7 +116,7 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.red,
         height: 100,
         alignSelf: 'flex-end',
-        marginRight: -30,
+        marginRight: -20,
         borderBottomLeftRadius: 999,
         borderTopLeftRadius: 999,
         marginTop: -70,
