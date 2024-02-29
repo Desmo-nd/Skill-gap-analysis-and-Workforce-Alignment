@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import Home from './screens/Home'; // Update the path to match your file structure
 import { useFonts } from 'expo-font';
 
@@ -19,17 +19,17 @@ export default function App() {
     return null;
   }
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Home/>
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // flex: 1,
+    // backgroundColor: '#fff',
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
 });
