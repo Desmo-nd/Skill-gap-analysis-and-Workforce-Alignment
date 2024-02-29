@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
         padding: 20,
         width: isBigScreen ? SIZES.width * 0.8 : '100%', 
         marginHorizontal:"auto",
-        height: 350
+        // height: isBigScreen ? 500 :  350,
     },
     deco1: {
         backgroundColor: COLORS.red,
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
         marginTop: 10
     },
     work: {
-        width: SIZES.width * 0.83,
+        width: SIZES.width,
         height: 30,
         textAlign: "center",
         color: COLORS.secondary,

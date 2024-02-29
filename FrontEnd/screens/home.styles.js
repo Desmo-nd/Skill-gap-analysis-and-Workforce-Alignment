@@ -1,25 +1,26 @@
 import { StyleSheet, Dimensions } from 'react-native';
 import { COLORS, SIZES } from '../constants';
 
-const { width } = Dimensions.get('window');
-const isBigScreen = width >= 1050;
+// const { width } = Dimensions.get('window');
+// const isBigScreen = width >= 1050;
 const styles = StyleSheet.create({
   firstContainer: {
     backgroundColor: COLORS.primary,
     padding: 20,
-    width: isBigScreen ? SIZES.width * 0.8 : '100%', 
+    width: SIZES.width,
+    // width: isBigScreen ? SIZES.width * 0.8 : '100%', 
    marginHorizontal:"auto"
   },
     logobar:{
-        // width: SIZES.width*0.87,
-        width: isBigScreen ? SIZES.width * 0.8 * 0.93 : SIZES.width * 0.83,
+        width: SIZES.width*0.95,
+        // width: isBigScreen ? SIZES.width * 0.8 * 0.93 : SIZES.width * 0.83,
         marginHorizontal:'3%',
         flexDirection: 'row',
         justifyContent: 'space-between',
     },
     innerContainer:{
-        // width: SIZES.width * 0.88,
-        width: isBigScreen ? SIZES.width * 0.8 * 0.99 : SIZES.width * 0.83,
+        width: SIZES.width * 0.95,
+        // width: isBigScreen ? SIZES.width * 0.8 * 0.99 : SIZES.width * 0.83,
     },
     logo:{
         fontSize: 30,
@@ -33,8 +34,8 @@ const styles = StyleSheet.create({
     welcome:{
         marginTop: SIZES.medium,
         marginBottom: SIZES.medium,
-        // width: SIZES.width * 0.88,
-        width: isBigScreen ? SIZES.width * 0.8 * 0.9575 : SIZES.width * 0.88,
+        width: SIZES.width * 0.95,
+        // width: isBigScreen ? SIZES.width * 0.8 * 0.9575 : SIZES.width * 0.88,
     },
     header:{
         fontSize: 44,
@@ -79,7 +80,8 @@ const styles = StyleSheet.create({
     footer:{
         backgroundColor: COLORS.primary,
         height: 40,
-        width: isBigScreen ? SIZES.width * 0.8 : '100%', 
+        width: SIZES.width,
+        // width: isBigScreen ? SIZES.width * 0.8 : '100%', 
         alignItems: 'center',
         marginHorizontal:"auto"
     },
