@@ -28,7 +28,6 @@ const Home = () => {
               <Text style={styles.header}>Build Your</Text>
               <Text style={styles.career}>Career</Text>
               <Text style={styles.description}>
-                {/* Take the first step towards building a successful career. */}
                 Enter your skills below to explore new opportunities and bridge the skill gap!
               </Text>
             </View> 
