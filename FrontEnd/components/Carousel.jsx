@@ -28,7 +28,7 @@ const Carousel = () => {
                 inactiveDotColor={COLORS.secondary}
                 ImageComponentStyle={{
                     borderRadius: 15, 
-                    width: isBigScreen ? SIZES.width * 0.8 * 0.84 : SIZES.width * 0.83,
+                    width: isBigScreen ? SIZES.width * 0.8 * 0.99 : SIZES.width * 0.83,
                     height: isBigScreen ? (SIZES.width * 0.8 * 0.33 * aspectRatio) : (SIZES.width * 0.93 * aspectRatio),
                     marginTop: 5,
                 }}

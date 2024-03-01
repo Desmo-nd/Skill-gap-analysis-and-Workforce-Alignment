@@ -17,7 +17,7 @@ const Individuals = () => {
                 source={require("../assets/images/Individuals.jpeg")}
                 style={{
                     width: isBigScreen ? SIZES.width * 0.5 : SIZES.width * 0.45,
-                    height: isBigScreen ? SIZES.height * 0.3 : SIZES.height * 0.229,
+                    height: isBigScreen ? SIZES.height * 0.5 : SIZES.height * 0.229,
                     borderTopLeftRadius:20,
                     borderBottomLeftRadius:20,
                 }}

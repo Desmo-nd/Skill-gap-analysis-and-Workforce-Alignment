@@ -33,10 +33,7 @@ const carouselStyles = StyleSheet.create({
     borderRadius: 20,
     marginTop: -20,
   },
-  containerBigScreen: {
-    width: SIZES.width * 0.95, // Adjust width for big screens
-    height: 800, // Adjust height for big screens
-  },
+ 
 });
 
 export default carouselStyles;
