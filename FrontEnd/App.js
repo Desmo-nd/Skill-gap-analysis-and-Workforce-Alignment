@@ -1,7 +1,11 @@
 import React from 'react';
-import { ScrollView} from 'react-native';
-import Home from './screens/Home';
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import Home from './screens/Home'; 
+import Login from './screens/Login';
+import Signup from './screens/Signup';
 import { useFonts } from 'expo-font';
+// import 'react-native-gesture-handler';
 
 export default function App() {
 
@@ -18,10 +22,27 @@ export default function App() {
   if (!loaded) {
     return null;
   }
+  const Stack = createStackNavigator();
   return (
-    <ScrollView >
-      <Home/>
-    </ScrollView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Signup"
+          component={Signup}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
