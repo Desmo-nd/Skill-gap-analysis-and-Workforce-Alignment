@@ -28,7 +28,7 @@ const Carousel = () => {
                 inactiveDotColor={COLORS.secondary}
                 ImageComponentStyle={{
                     borderRadius: 15, 
-                    width: isBigScreen ? SIZES.width * 0.8 * 0.99 : SIZES.width * 0.83,
+                    width: isBigScreen ? (SIZES.width * 0.93 * 0.99) : "94%",
                     height: isBigScreen ? (SIZES.width * 0.8 * 0.33 * aspectRatio) : (SIZES.width * 0.93 * aspectRatio),
                     marginTop: 5,
                 }}
@@ -47,6 +47,7 @@ export default Carousel;
  
 const styles = StyleSheet.create({
     carouselContainer: {
+        width:SIZES.width,
         flex: 1,
         alignItems: "center",
         zIndex: 1,

@@ -1,7 +1,6 @@
 import React from "react";
 import { View, Text, Image, Dimensions } from "react-native";   
 import styles from "./carousel.styles";
-import { SIZES } from "../constants";
 
 
 const Individuals = () => {

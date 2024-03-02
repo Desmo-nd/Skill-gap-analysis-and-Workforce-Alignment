@@ -70,14 +70,15 @@ const Predict = () => {
 
 const styles = StyleSheet.create({
   textcontainer:{
-        width: "93%",
-        marginHorizontal: "3%",
-        height: 44,
-        borderWidth: 1,
-        borderColor: "#fff",
-        borderRadius: 5,
-        paddingHorizontal: 15,
-        color: "#fff"
+    width: "93%",
+    marginHorizontal: "3.5%",
+    height: 44,
+    borderWidth: 1,
+    borderColor: "#fff",
+    borderRadius: 5,
+    paddingHorizontal: 15,
+    color: "#fff",
+    marginBottom: 17,
   },
   modalContainer:{
     flex: 1,

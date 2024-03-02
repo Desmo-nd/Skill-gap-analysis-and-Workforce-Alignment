@@ -21,11 +21,12 @@ const styles = StyleSheet.create({
         height:45,
         width:'93%',
         marginVertical:SIZES.xSmall,
-        marginHorizontal:'3%',
+        marginHorizontal:'3.5%',
         backgroundColor:COLORS.red,
         justfyContent:'center',
         alignItems:'center',
-        borderRadius:12
+        borderRadius:12,
+        marginBottom:40
     },
 
     btnTxt:{
