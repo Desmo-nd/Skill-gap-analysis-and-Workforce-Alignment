@@ -41,13 +41,14 @@ const WorkWith = () => {
 
     return (
         <View style={styles.firstContainer}>
-            <View style={styles.deco1}>
-                <View style={{ flexDirection: "row" }}>
+            <View decoConatiner>
+                <View style={styles.deco1}>
                     <View style={styles.innerDeco1}></View>
-                    <Text style={styles.work}>WHO WE WORK WITH</Text>
+                </View>
+                <View style={styles.workCont}>
+                        <Text style={styles.work}>WHO WE WORK WITH</Text>
                 </View>
             </View>
-
             <ScrollView
                 ref={scrollViewRef}
                 horizontal
@@ -87,6 +88,9 @@ const styles = StyleSheet.create({
         marginHorizontal:"auto",
         // height: isBigScreen ? 500 :  350,
     },
+    decoConatiner:{
+        
+    },
     deco1: {
         backgroundColor: COLORS.red,
         height: 100,
@@ -94,6 +98,7 @@ const styles = StyleSheet.create({
         marginLeft: -20,
         borderBottomRightRadius: 999,
         borderTopRightRadius: 999,
+        zIndex: 1,
     },
     innerDeco1: {
         backgroundColor: COLORS.primary,
@@ -103,8 +108,13 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 999,
         marginTop: 10
     },
+    workCont:{
+        position: 'absolute',
+        zIndex: 2,
+        width: '100%',
+    },
     work: {
-        width: SIZES.width,
+        width: "100%",
         height: 30,
         textAlign: "center",
         color: COLORS.secondary,

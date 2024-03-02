@@ -8,6 +8,7 @@ import Role from "./Role";
 import Universities from "./Universities";
 import Individuals from "./Individuals";
 import Government from "./Government";
+import welcome from "./Welcome";
 
 
 
@@ -15,6 +16,7 @@ import Government from "./Government";
 
 
 export { 
+    welcome,
     Carousel,
     Button,
     HighDemand,
