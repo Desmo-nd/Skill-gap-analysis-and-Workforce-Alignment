@@ -12,12 +12,7 @@ const Universities = () => {
       <View style={styles.imageContainer}>
             <Image
                 source={require("../assets/images/Unis.jpeg")}
-                style={{
-                    width: SIZES.width*0.45,
-                    height: SIZES.height*0.229,
-                    borderTopLeftRadius:20,
-                    borderBottomLeftRadius:20,
-                }}
+                style={styles.image}
             />
         </View>
         <View style={styles.textContainer}>

@@ -41,11 +41,12 @@ const styles = StyleSheet.create({
         width: SIZES.width,
         // width: isBigScreen ? SIZES.width * 0.8 : '100%', 
        marginHorizontal:"auto"
-      },
+    },
     logobar:{
         width: "95%",
         // width: isBigScreen ? SIZES.width * 0.8 * 0.93 : SIZES.width * 0.83,
         marginHorizontal:'3%',
+        marginTop: SIZES.medium,
         flexDirection: 'row',
         justifyContent: 'space-between',
     },
@@ -96,7 +97,7 @@ const styles = StyleSheet.create({
         right: 0,
         backgroundColor: COLORS.red,
         height: 100,
-        marginLeft:-4,
+        marginRight:-20,
         borderBottomLeftRadius:999,
         borderTopLeftRadius:999,
         marginTop:20,

@@ -15,19 +15,14 @@ const Individuals = () => {
       <View style={styles.imageContainer}>
             <Image
                 source={require("../assets/images/Individuals.jpeg")}
-                style={{
-                    width: isBigScreen ? SIZES.width * 0.5 : SIZES.width * 0.45,
-                    height: isBigScreen ? SIZES.height * 0.5 : SIZES.height * 0.229,
-                    borderTopLeftRadius:20,
-                    borderBottomLeftRadius:20,
-                }}
+                style={styles.image}
             />
         </View>
         <View style={styles.textContainer}>
             <Text style={styles.title}>Individuals</Text>
             <Text style={styles.description}>
                 Our platform provides insights on the most in-demand skills in the workforce 
-                to help individuals make informed decisions on their career paths.
+                to help individuals make informed decisions on their career paths...
             </Text>
         </View>
         
