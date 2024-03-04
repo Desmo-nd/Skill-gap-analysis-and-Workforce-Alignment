@@ -27,10 +27,7 @@ const HighDemand = () => {
                     </View>
                     <Text style={styles.skill}>{skill}</Text>
                     <Text style={styles.skillDescription}>
-                        Content creation involves the process of developing and organizing content 
-                        for various platforms such as websites, social media, and marketing campaigns. 
-                        It includes creating engaging and relevant content, such as articles, videos, 
-                        and graphics, tailored to the target audience. 
+                    This skill enhances employability and increases earning potential by expanding expertise, opening up new job opportunities, and leading to promotions and salary increases. Overall, it significantly boosts professional growth and financial well-being.
                     </Text>
                     <View style={styles.buttonContainer}>
                         <LinkButton title="Learn More" />

@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList, ActivityIndicator } from 'react-native';
+import { View, Text, FlatList, ActivityIndicator, SafeAreaView, ScrollView } from 'react-native';
+import styles from './highdemand.styles';
+import { LinearGradient } from 'expo-linear-gradient';
+
 
 const HighDemandJobs = () => {
     const [loading, setLoading] = useState(true);
@@ -33,24 +36,33 @@ const HighDemandJobs = () => {
         return string.replace(/\b\w/g, (char) => char.toUpperCase());
     };
     return (
-        <View style={{ flex: 1, padding: 20 }}>
-            <Text style={{ fontSize: 20, fontWeight: 'bold', marginBottom: 10 }}>High-Demand Jobs</Text>
-            <FlatList
-                data={jobs}
-                keyExtractor={(item, index) => index.toString()}
-                renderItem={({ item }) => (
-                    <View style={{ marginBottom: 20, borderWidth: 1, padding: 10 }}>
-                        <Text style={{ fontWeight: 'bold', marginBottom: 5 }}>{capitalizeFirstLetter(removePunctuation(item['Job Title']))}</Text>
-                        <Text style={{ marginBottom: 5 }}>Salary Range: {item['Salary Range']}</Text>
-                        <Text style={{ fontWeight: 'bold' }}>Skills:</Text>
-                        {item.tokenized_skills.split(',').map((skill, index) => (
-                            <Text key={index}>{capitalizeFirstLetter(removePunctuation(skill.trim()))}</Text>
-                        ))}
-                    </View>
-                )}
-            />
-        </View>
+        <SafeAreaView>
+            <ScrollView>
+                <LinearGradient
+                    colors={['rgba(255, 254, 230, 0.7)', 'rgba(6, 66, 66, 0.2)']}            start={{ x: 0, y: 0 }}
+                        end={{ x: 1, y: 0 }}
+                        style={styles.container}
+                    >
+                        <Text style={styles.header}>High-Demand Jobs</Text>
+                        <FlatList
+                            data={jobs}
+                            keyExtractor={(item, index) => index.toString()}
+                            renderItem={({ item }) => (
+                                <View style={styles.skillContainer}>
+                                    <Text style={styles.jobTitle}>{capitalizeFirstLetter(removePunctuation(item['Job Title']))}</Text>
+                                    <Text style={styles.salary}>Salary Range: {item['Salary Range']}</Text>
+                                    <Text style={styles.skill}>Skills:</Text>
+                                    {item.tokenized_skills.split(',').map((skill, index) => (
+                                        <Text style={styles.skills} key={index}>{capitalizeFirstLetter(removePunctuation(skill.trim()))}</Text>
+                                    ))}
+                                </View>
+                            )}
+                        />
+                </LinearGradient>
+            </ScrollView>
+         </SafeAreaView>
     );
 };
 
 export default HighDemandJobs;
+
