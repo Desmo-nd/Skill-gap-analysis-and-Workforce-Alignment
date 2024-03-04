@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
   
     footer:{
         backgroundColor: COLORS.primary,
-        height: 40,
+        height: 60,
         width: SIZES.width,
         // width: isBigScreen ? SIZES.width * 0.8 : '100%', 
         alignItems: 'center',
