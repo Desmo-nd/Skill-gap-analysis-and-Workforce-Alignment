@@ -7,7 +7,7 @@ const LinkButton = ({ title, onPress }) => {
   const isSmallScreen = width <= 500; 
   const buttonWidth = isSmallScreen ? '33%' : '40%'; 
   const fontSize = isSmallScreen ? 18 : 16;
-  const marginTop = isSmallScreen ? 10 : 35; // Adjust the marginTop value for big screens
+  const marginTop = isSmallScreen ? 10 : 49; // Adjust the marginTop value for big screens
 
   return (
     <TouchableOpacity 

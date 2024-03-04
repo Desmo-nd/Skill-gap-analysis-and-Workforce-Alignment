@@ -84,9 +84,9 @@ const styles = StyleSheet.create({
     firstContainer: {
         backgroundColor: COLORS.primary,
         padding: 20,
-        width: isBigScreen ? SIZES.width * 0.8 : '100%', 
+        width: isBigScreen ? SIZES.width : '100%', 
         marginHorizontal:"auto",
-        // height: isBigScreen ? 500 :  350,
+        height: isBigScreen ? 440 :  350,
     },
     decoConatiner:{
         

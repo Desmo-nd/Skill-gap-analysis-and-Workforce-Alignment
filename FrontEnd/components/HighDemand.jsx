@@ -7,7 +7,8 @@ import LinkButton from './LinkButton';
 const HighDemand = () => {
     const [highDemandSkills, setHighDemandSkills] = useState([]);
     const { width } = useWindowDimensions();
-    const flexBasis = width > 500 ? '30%' : 200; // 30% of the width or 200px   
+    const flexBasis = width > 500 ? '30%' : 200; 
+    
 
     useEffect(() => {
         fetch('http://192.168.0.109:5000/high-demand-skills')
@@ -20,14 +21,19 @@ const HighDemand = () => {
         <View style={styles.container}>
             <Text style={styles.title}>ON DEMAND SKILLS</Text>
             {highDemandSkills.map((skill, index) => (
-                <View key={index} style={[styles.skillContainer, index === 0 && styles.firstSkill, { flexBasis }, flexBasis === '30%' && styles.bigScreenStyle]}>
+                <View key={index} 
+                style={[
+                    styles.skillContainer, 
+                    index === 0 && styles.firstSkill, 
+                    { flexBasis }, flexBasis === '30%' && styles.bigScreenStyle
+                ]}>
                     <View>
                         <Image source={require('../assets/images/skillIcon.png')} 
                             style={{ width: 50, height: 50 }} />
                     </View>
                     <Text style={styles.skill}>{skill}</Text>
                     <Text style={styles.skillDescription}>
-                    This skill enhances employability and increases earning potential by expanding expertise, opening up new job opportunities, and leading to promotions and salary increases. Overall, it significantly boosts professional growth and financial well-being.
+                        This skill enhances employability and increases earning potential by expanding expertise, opening up new job opportunities, and leading to promotions and salary increases. Overall, it significantly boosts professional growth and financial well-being.
                     </Text>
                     <View style={styles.buttonContainer}>
                         <LinkButton title="Learn More" />
@@ -42,7 +48,7 @@ const { width } = Dimensions.get('window');
 const isBigScreen = width >= 1050;
 const styles = StyleSheet.create({
     container: {
-        width: isBigScreen ? SIZES.width * 0.8 : '100%', 
+        width: isBigScreen ? SIZES.width * 0.9 : '100%', 
         padding: SIZES.small,
         borderRadius: 5,
         margin: SIZES.small,
@@ -74,7 +80,7 @@ const styles = StyleSheet.create({
     bigScreenStyle: {
         margin: 10,
         padding: 10,
-        height: 260,
+        height: 300,
     },
     skill: {
         fontSize: 16,
