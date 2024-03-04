@@ -105,6 +105,47 @@ def high_demand_skills():
     return jsonify({"high_demand_skills": high_demand_skills})
 
 
+data = pd.read_csv('working_best.csv')
+
+@app.route('/load_data', methods=['GET'])
+def load_data():
+    # Feature extraction using TF-IDF
+    vectorizer = TfidfVectorizer()
+    X = vectorizer.fit_transform(data['Job Title'])
+
+    # Train KMeans model
+    n_clusters = 6
+    kmeans = KMeans(n_clusters=n_clusters, random_state=10)
+    kmeans.fit(X)
+
+    # Save the trained model
+    joblib.dump(kmeans, 'demand_kmeans_model.joblib')
+
+    # Assign cluster labels to job data
+    data['cluster'] = kmeans.labels_
+
+    # Identify the cluster with the highest count (assuming the index corresponds to the cluster label)
+    high_demand_cluster = data['cluster'].value_counts().idxmax()
+
+    clusters = {}
+    for cluster_label in range(n_clusters):
+        cluster_data = data[data['cluster'] == cluster_label]
+        job_info = []
+        for index, row in cluster_data.iterrows():
+            if len(job_info) >= 5:
+                break
+            job_info.append({
+                'Job Title': row['Job Title'],
+                'tokenized_skills': row['tokenized_skills'], 
+                'Salary Range': row['Salary Range'],
+            })
+        clusters[cluster_label] = job_info
+
+    # Get the high-demand cluster jobs
+    high_demand_jobs = clusters[high_demand_cluster]
+
+    return jsonify({'high_demand_jobs': high_demand_jobs})
+
 
 if __name__ == '__main__':
     logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)

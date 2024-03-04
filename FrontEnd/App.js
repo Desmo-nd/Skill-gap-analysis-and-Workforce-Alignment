@@ -4,6 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Home from './screens/Home'; 
 import Login from './screens/Login';
 import Signup from './screens/Signup';
+import HighDemandJobs from './screens/HighDemandJobs';
 import { useFonts } from 'expo-font';
 
 export default function App() {
@@ -38,6 +39,11 @@ export default function App() {
         <Stack.Screen
           name="Signup"
           component={Signup}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="HighDemandJobs"
+          component={HighDemandJobs}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

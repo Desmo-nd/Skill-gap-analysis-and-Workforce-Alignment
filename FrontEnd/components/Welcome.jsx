@@ -6,6 +6,8 @@ import { BlurView } from 'expo-blur';
 import Carousel from "./Carousel";
 import Predict from "./Predict";
 import SignBtn from "./SignBtn";
+import { useNavigation } from '@react-navigation/native';
+
 
 const welcome = () => {
     const [isMenuVisible, setIsmenuVisible] = useState(false);
@@ -13,6 +15,8 @@ const welcome = () => {
     const toggleMenu =() =>{
         setIsmenuVisible(!isMenuVisible);
     }
+    const navigation = useNavigation();
+
     return (
         <View style={styles.firstContainer}>
             <View style={styles.logobar}>
@@ -42,7 +46,10 @@ const welcome = () => {
                     <TouchableOpacity style={styles.menuCont}>
                         <Text style={styles.menutext}>Upload Resume</Text>
                     </TouchableOpacity>    
-                    <TouchableOpacity style={styles.menuCont}>
+                    <TouchableOpacity 
+                        style={styles.menuCont} 
+                        onPress={() => navigation.navigate('HighDemandJobs')}
+                    >
                         <Text style={styles.menutext}>On demand Jobs</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.menuCont}>
