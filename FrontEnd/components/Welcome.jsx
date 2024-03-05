@@ -60,7 +60,11 @@ const welcome = () => {
                     </TouchableOpacity>
 
                     <View style={styles.buttonCont}>
-                        <SignBtn title="Sign In" style={styles.Logout}/>
+                        <SignBtn 
+                            title="Sign In" 
+                            style={styles.Logout}
+                            onPress={() => navigation.navigate('Login')}    
+                        />
                     </View>    
                 </View>
             )}

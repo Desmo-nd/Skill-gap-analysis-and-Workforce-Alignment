@@ -1,20 +1,23 @@
 import React from "react";
-import {Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
+import {Text, TextInput, TouchableOpacity, View } from "react-native";
+import styles from "./auth.styles";
 import { LinearGradient } from 'expo-linear-gradient';
-import { SIZES } from "../constants";
+import { COLORS } from "../constants";
+import { useNavigation } from '@react-navigation/native';
 
 const Login = () => {
+  const navigation = useNavigation();
   return (
     <LinearGradient
-      colors={['#FFFFFF', '#ADD8E6']}
+      colors={['rgba(255, 254, 230, 0.7)', 'rgba(6, 66, 66, 0.2)']}            
       start={{ x: 0, y: 0.5 }}
-      end={{ x: 1, y: 0.5 }}
+      end={{ x: 1, y: 0 }}
       style={styles.container}
       >   
         <LinearGradient
-          colors={['#ADD8E6','#FFFFFF']}
+          colors={['rgba(255, 254, 230, 0.7)', 'rgba(255, 254, 230, 0.7)']}
           start={{ x: 0, y: 0.5 }}
-          end={{ x: 1, y: 0.5 }}
+          end={{ x: 1, y: 0 }}
           style={styles.innerContainer}
           >   
       <Text style={styles.title}>Log In</Text>
@@ -23,53 +26,19 @@ const Login = () => {
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Log In</Text>
       </TouchableOpacity>
+      <View style={{marginTop: 10, flexDirection:"row"}}>
+        <Text style={{marginTop: 0}}> Don't have an account? </Text>
+        <TouchableOpacity 
+            onPress={() => navigation.navigate('Signup')}  
+        >
+          <Text style={{color: COLORS.red}}> Sign Up</Text>
+        </TouchableOpacity>
+        
+      </View>
       </LinearGradient>
     </LinearGradient>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    paddingHorizontal: 20,
-    borderWidth: 1,
-    borderColor: "#fff",
-  },
-  innerContainer:{
-    backgroundColor: "#ADD8E6",
-    width: SIZES.width*0.9,
-    padding: 20,
-    borderRadius: 10,
-  },
-  title: {
-    fontSize: 24,
-    fontFamily: "bold",
-    marginBottom: 20,
-  },
-  input: {
-    width: "100%",
-    height: 40,
-    borderWidth: 1,
-    borderColor: "#ccc",
-    borderRadius: 5,
-    paddingHorizontal: 10,
-    marginBottom: 10,
-  },
-  button: {
-    width: "100%",
-    height: 40,
-    backgroundColor: "blue",
-    borderRadius: 5,
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 10,
-  },
-  buttonText: {
-    color: "white",
-    fontFamily: "bold",
-  },
-});
 
 export default Login;

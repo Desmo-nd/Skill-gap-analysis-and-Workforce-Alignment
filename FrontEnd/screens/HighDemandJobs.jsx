@@ -39,7 +39,8 @@ const HighDemandJobs = () => {
         <SafeAreaView>
             <ScrollView>
                 <LinearGradient
-                    colors={['rgba(255, 254, 230, 0.7)', 'rgba(6, 66, 66, 0.2)']}            start={{ x: 0, y: 0 }}
+                    colors={['rgba(255, 254, 230, 0.7)', 'rgba(6, 66, 66, 0.2)']}            
+                        start={{ x: 0, y: 0 }}
                         end={{ x: 1, y: 0 }}
                         style={styles.container}
                     >
