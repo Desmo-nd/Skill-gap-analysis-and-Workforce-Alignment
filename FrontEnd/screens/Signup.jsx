@@ -1,7 +1,15 @@
 import React from "react";
-import {Text, TextInput, TouchableOpacity} from "react-native";
+import {TouchableOpacity, View, Text, SafeAreaView, TextInput, StatusBar } from "react-native";
 import styles from "./auth.styles";
 import { LinearGradient } from 'expo-linear-gradient';
+import axios from "axios";
+import { Alert } from "react-native";
+import { COLORS } from "../constants";
+import  {MaterialCommunityIcons, Ionicons} from "@expo/vector-icons";
+import * as Yup from "yup";   
+import {Formik} from "formik";  
+import { useState } from "react";
+import ButtonSignup from "../components/ButtonSignup";
 
 
 const validationSchema = Yup.object().shape({
@@ -11,20 +19,14 @@ const validationSchema = Yup.object().shape({
     .required('Required'),
   email: Yup.string()
       .email('provide a valid email address')
-      .required('Required'),
-  phoneNo: Yup.string()
-      .min(10, 'Provide a valid phone number')
       .required('Required'),    
-  location: Yup.string()
-      .min(3, 'Provide a valid location')
-      .required('Required'),  
   username: Yup.string()
       .min(3, 'Provide a valid username')
       .required('Required'),   
 });
 
 
-const Signup = () => {
+const Signup = ({navigation}) => {
   const [loader, setLoader] = useState(false);
     const [obsecureText, setObsequireText] = useState(false);
  
@@ -71,7 +73,7 @@ const Signup = () => {
       style={styles.container}
       >   
         <Formik
-          initialValues={{email: "", password: "", location: "", username: "", phoneNo: ""}}
+          initialValues={{email: "", password: "", username: ""}}
           validationSchema={validationSchema}
           onSubmit={values => registerUser(values)}
         >
@@ -94,8 +96,8 @@ const Signup = () => {
                 <Text style={styles.title}>Sign Up</Text>
                 <View style={styles.wrapper}>
                   <Text style={styles.label}>Username</Text>
-                  <View style={styles.inputWrapper(touched.username ? COLORS.secondary: COLORS.offwhite)}>
-                      <MaterialCommunityIcons
+                  <View style={[styles.inputWrapper, { borderColor: touched.username ? COLORS.secondary : COLORS.offwhite }]}>                      
+                    <MaterialCommunityIcons
                           name="face-man-profile"  
                           size={24}
                           color={COLORS.gray}
@@ -121,7 +123,9 @@ const Signup = () => {
                 {/* <TextInput placeholder="Email" style={styles.input} /> */}
                 <View style={styles.wrapper}>
                   <Text style={styles.label}>Email</Text>
-                  <View style={styles.inputWrapper(touched.email ? COLORS.secondary: COLORS.offwhite)}>
+                  <View 
+                    style={[styles.inputWrapper, 
+                      { borderColor: touched.username ? COLORS.secondary : COLORS.offwhite }]}>                      
                       <MaterialCommunityIcons
                           name="email-outline"  
                           size={24}
@@ -148,8 +152,8 @@ const Signup = () => {
                 {/* <TextInput placeholder="Password" style={styles.input} secureTextEntry /> */}
                 <View style={styles.wrapper}>
                   <Text style={styles.label}>Password</Text>
-                  <View style={styles.inputWrapper(touched.password ? COLORS.secondary: COLORS.offwhite)}>
-                      <MaterialCommunityIcons
+                  <View style={[styles.inputWrapper, { borderColor: touched.username ? COLORS.secondary : COLORS.offwhite }]}>                      
+                    <MaterialCommunityIcons
                           name="lock-outline"  
                           size={24}
                           color={COLORS.gray}
@@ -189,7 +193,7 @@ const Signup = () => {
                       onPress={isValid ?handleSubmit: inValidForm} 
                       loader={loader}
                       isValid={isValid}
-                      style={{backgroundColor:COLORS.primary, }}
+                      style={{backgroundColor:COLORS.red}}
                   /> 
                 </View>
               </LinearGradient>

@@ -21,12 +21,12 @@ export default ButtonSignup
 
 const styles = StyleSheet.create({
    
-    btnStyle: (backgroundColor)=>({
-        height:50,
+    btnStyle: ()=>({
+        height:45,
         width:'90%',
         marginVertical:SIZES.xxLarge,
         marginHorizontal:'5%',
-        backgroundColor:backgroundColor,
+        backgroundColor:COLORS.red,
         justfyContent:'center',
         alignItems:'center',
         borderRadius:12
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
 
     btnTxt:{
         fontFamily:'bold',
-        color:COLORS.words,
+        color:"#fff",
         fontSize:18,
         marginVertical:10
     },
