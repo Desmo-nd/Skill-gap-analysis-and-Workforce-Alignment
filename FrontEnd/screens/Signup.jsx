@@ -1,7 +1,6 @@
 import React from "react";
 import {Text, TextInput, TouchableOpacity} from "react-native";
 import styles from "./auth.styles";
-import { SIZES } from "../constants";
 import { LinearGradient } from 'expo-linear-gradient';
 
 const Signup = () => {
