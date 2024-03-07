@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     },
     innerContainer:{
     backgroundColor: "#ADD8E6",
-    width: SIZES.width*0.9,
+    width: SIZES.width*0.7,
     padding: 20,
     borderRadius: 10,
     shadowColor: "#000",
