@@ -10,7 +10,7 @@ import Individuals from "./Individuals";
 import Government from "./Government";
 import welcome from "./Welcome";
 import SignBtn from "./SignBtn";
-
+import ButtonSignup from "./ButtonSignup";
 
 
 
@@ -28,5 +28,6 @@ export {
     Universities,
     Individuals,
     Government,
-    SignBtn
+    SignBtn,
+    ButtonSignup
 };
