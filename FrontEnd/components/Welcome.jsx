@@ -40,7 +40,9 @@ const welcome = () => {
                     <TouchableOpacity style={styles.menuCont}>
                         <Text style={styles.menutext}>Home</Text>
                     </TouchableOpacity>                  
-                    <TouchableOpacity style={styles.menuCont}>
+                    <TouchableOpacity style={styles.menuCont}
+                        onPress={() => navigation.navigate('Profile')}
+                    >
                         <Text style={styles.menutext}>Profile</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.menuCont}>
