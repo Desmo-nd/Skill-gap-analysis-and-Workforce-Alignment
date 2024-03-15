@@ -14,7 +14,7 @@ const Profile = () => {
 
   const handleSkillChange = (index, value) => {
     const updatedSkills = [...skills];
-    updatedSkills[index].completion = parseInt(value) || 0; // Ensure value is a number
+    updatedSkills[index].completion = parseInt(value) || 0; 
     setSkills(updatedSkills);
   };
 
@@ -29,7 +29,7 @@ const Profile = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.heading}>Profile</Text>
+      <Text style={styles.heading}>My skills</Text>
       {skills.map((skill, index) => (
         <View key={index} style={styles.skillContainer}>
           <Text style={styles.skillName}>{skill.name}</Text>
@@ -44,20 +44,20 @@ const Profile = () => {
       ))}
       <View style={styles.addSkillContainer}>
         <TextInput
-          style={styles.input}
+          style={styles.skillinput}
           value={newSkill}
           onChangeText={setNewSkill}
           placeholder="Skill Name"
         />
         <TextInput
-          style={styles.input}
+          style={styles.perinput}
           value={newCompletion.toString()}
           onChangeText={(value) => setNewCompletion(parseInt(value) || 0)}
           keyboardType="numeric"
           placeholder="% Completion"
         />
         <TouchableOpacity style={styles.addButton} onPress={handleAddSkill}>
-          <Text>Add Skill</Text>
+          <Text style={styles.addbtn}>Add Skill</Text>
         </TouchableOpacity>
       </View>
     </View>
