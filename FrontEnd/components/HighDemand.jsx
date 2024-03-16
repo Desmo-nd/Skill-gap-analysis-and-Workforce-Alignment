@@ -11,7 +11,7 @@ const HighDemand = () => {
     
 
     useEffect(() => {
-        fetch('http://192.168.0.109:5000/high-demand-skills')
+        fetch('http://192.168.0.112:5000/high-demand-skills')
             .then(response => response.json())
             .then(data => setHighDemandSkills(data.high_demand_skills))
             .catch(error => console.error(error));

@@ -150,5 +150,5 @@ def load_data():
 if __name__ == '__main__':
     logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
 
-    app.run(host='192.168.0.109', port=5000)
+    app.run(host='0.0.0.0', port=5000)
 
