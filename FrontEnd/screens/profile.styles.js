@@ -1,17 +1,23 @@
 import { StyleSheet } from 'react-native';
-import { SIZES } from '../constants';
+import { COLORS, SIZES } from '../constants';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    // padding: 20,
     backgroundColor: 'lightgray',
+  },
+  header:{
+    height: SIZES.height * 0.07,
+    width: SIZES.width,
+    backgroundColor: COLORS.primary,
   },
   heading: {
     fontSize: 24,
     fontFamily: 'bold',
-    marginBottom: 10,
+    marginTop: 20,
     textAlign: 'center',
+    color: 'white',
   },
   skillContainer: {
     flexDirection: 'row',

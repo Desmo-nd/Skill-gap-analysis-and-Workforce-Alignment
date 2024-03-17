@@ -80,23 +80,28 @@ const Profile = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.heading}>My skills</Text>
-      {loading ? ( // Display loader while loading
-        <ActivityIndicator size="large" color="#0000ff" />
-      ) : (
-        skills.map((skill, index) => (
-          <View key={index} style={styles.skillContainer}>
-            <Text style={styles.skillName}>{skill.name}</Text>
-            <TextInput
-              style={styles.input}
-              value={skill.completion.toString()}
-              onChangeText={(value) => handleSkillChange(index, value)}
-              keyboardType="numeric"
-            />
-            <Text>%</Text>
-          </View>
-        ))
-      )}
+      <View style={styles.header}>
+        <Text style={styles.heading}>My skills</Text>
+      </View>
+      <View style={{padding:20}}>
+        {loading ? ( // Display loader while loading
+          <ActivityIndicator size="large" color="#0000ff" />
+        ) : (
+          skills.map((skill, index) => (
+            <View key={index} style={styles.skillContainer}>
+              <Text style={styles.skillName}>{skill.name}</Text>
+              <TextInput
+                style={styles.input}
+                value={skill.completion.toString()}
+                onChangeText={(value) => handleSkillChange(index, value)}
+                keyboardType="numeric"
+              />
+              <Text>%</Text>
+            </View>
+          ))
+        )}
+      </View>
+
       <View style={styles.addSkillContainer}>
         <TextInput
           style={styles.skillinput}
