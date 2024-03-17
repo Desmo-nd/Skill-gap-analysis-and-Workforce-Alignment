@@ -10,13 +10,24 @@ const HighDemand = () => {
     const flexBasis = width > 500 ? '30%' : 200; 
     
 
+    // useEffect(() => {
+    //     fetch('http://192.168.0.112:5000/high-demand-skills')
+    //         .then(response => response.json())
+    //         .then(data => setHighDemandSkills(data.high_demand_skills))
+    //         .catch(error => console.error(error));
+    // }, []);
     useEffect(() => {
         fetch('http://192.168.0.112:5000/high-demand-skills')
             .then(response => response.json())
-            .then(data => setHighDemandSkills(data.high_demand_skills))
+            .then(data => {
+                // Shuffle the skills array
+                const shuffledSkills = data.high_demand_skills.sort(() => Math.random() - 0.5);
+                // Slice the first 6 skills
+                const limitedSkills = shuffledSkills.slice(0, 6);
+                setHighDemandSkills(limitedSkills);
+            })
             .catch(error => console.error(error));
     }, []);
-
     return (
         <View style={styles.container}>
             <Text style={styles.title}>ON DEMAND SKILLS</Text>

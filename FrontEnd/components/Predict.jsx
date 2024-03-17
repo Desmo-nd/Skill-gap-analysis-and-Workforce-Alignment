@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, Text, StyleSheet, Modal } from 'react-native';
+import { View, TextInput, Text, StyleSheet, Modal, ScrollView } from 'react-native';
 import Button from './Button';
 
 
@@ -58,10 +58,12 @@ const Predict = () => {
                         setModalVisible(false);
                     }}
                 >
+                    {/* <ScrollView> */}
                     <View style={styles.modalContainer}>
                         <Text style={styles.results}>{result}</Text>
                         <Button title="Close" onPress={() => setModalVisible(false)} />
                     </View>
+                    {/* </ScrollView> */}
                 </Modal>
             </View>
         </View>
