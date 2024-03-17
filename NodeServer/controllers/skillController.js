@@ -12,3 +12,15 @@ exports.addSkill = async (req, res) => {
         res.status(500).json({ error: 'Failed to add skill' });
     }
 };
+
+exports.getSkillsByUserId = async (req, res) => {
+    const userId = req.params.userId;
+
+    try {
+        const skills = await Skill.find({ userId }).exec();
+        res.status(200).json({ skills });
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to fetch skills' });
+    }
+};
+
