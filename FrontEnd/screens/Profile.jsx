@@ -13,16 +13,16 @@ const Profile = () => {
   const [skills, setSkills] = useState([]);
   const [newSkill, setNewSkill] = useState('');
   const [newCompletion, setNewCompletion] = useState(0);
-  const [loading, setLoading] = useState(true); // Add loading state
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
     const fetchUserId = async () => {
       try {
-        const storedUserId = await AsyncStorage.getItem('id'); // Use the correct key 'id'
+        const storedUserId = await AsyncStorage.getItem('id'); 
         if (storedUserId) {
-          const cleanedUserId = storedUserId.replace(/"/g, ''); // Remove double quotes from user ID
-          console.log('Cleaned User ID:', cleanedUserId);
-          fetchSkills(cleanedUserId); // Pass the cleaned user ID to fetchSkills
+          const cleanedUserId = storedUserId.replace(/"/g, ''); 
+          // console.log('Cleaned User ID:', cleanedUserId);
+          fetchSkills(cleanedUserId);
         } else {
           console.log('Stored user ID is null or empty');
         }
@@ -34,9 +34,8 @@ const Profile = () => {
     fetchUserId();
   }, []);
   
-  const fetchSkills = (userId) => { // Receive userId as a parameter
-    axios.get(`http://192.168.0.112:3000/skill/${userId}`)
-    
+  const fetchSkills = (cleanedUserId) => {
+    axios.get(`http://192.168.0.112:3000/skill/${cleanedUserId}`)
       .then(response => {
         setSkills(response.data.skills);
         setLoading(false); // Set loading to false after fetching skills
@@ -51,12 +50,22 @@ const Profile = () => {
     const updatedSkills = [...skills];
     updatedSkills[index].completion = parseInt(value) || 0;
     setSkills(updatedSkills);
+
+    const skillId = updatedSkills[index]._id; 
+    // console.log('Skill ID:', skillId);
+    axios.patch(`http://192.168.0.112:3000/skill/${userId.replace(/"/g, '')}/update/${skillId}`, { completion: parseInt(value) })
+      .then(response => {
+        console.log('Skill level updated:', response.data);
+      })
+      .catch(error => {
+        console.error('Error updating skill level:', error);
+      });
   };
 
   const handleAddSkill = () => {
     if (newSkill && newCompletion >= 0 && newCompletion <= 100) {
       const skillData = { name: newSkill, completion: newCompletion };
-      axios.post(`http://192.168.0.112:3000/skill/${userId}/add`, skillData)
+      axios.post(`http://192.168.0.112:3000/skill/${userId.replace(/"/g, '')}/add`, skillData) // Remove double quotes from userId
         .then(response => {
           const newSkills = [...skills, response.data.Skill];
           setSkills(newSkills);
