@@ -7,6 +7,7 @@ import Signup from './screens/Signup';
 import Profile from './screens/Profile';
 import HighDemandJobs from './screens/HighDemandJobs';
 import { useFonts } from 'expo-font';
+import { UserProvider } from './contexts/UserContext';
 
 export default function App() {
 
@@ -25,6 +26,7 @@ export default function App() {
   }
   const Stack = createStackNavigator();
   return (
+    <UserProvider>
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
@@ -54,6 +56,7 @@ export default function App() {
         />
       </Stack.Navigator>
     </NavigationContainer>
+    </UserProvider>
   );
 }
 
