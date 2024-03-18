@@ -38,11 +38,11 @@ const Profile = () => {
     axios.get(`http://192.168.0.112:3000/skill/${cleanedUserId}`)
       .then(response => {
         setSkills(response.data.skills);
-        setLoading(false); // Set loading to false after fetching skills
+        setLoading(false); 
       })
       .catch(error => {
         console.error('Error fetching skills:', error);
-        setLoading(false); // Set loading to false in case of error
+        setLoading(false); 
       });
   };
 
@@ -84,7 +84,7 @@ const Profile = () => {
         <Text style={styles.heading}>My skills</Text>
       </View>
       <View style={{padding:20}}>
-        {loading ? ( // Display loader while loading
+        {loading ? ( 
           <ActivityIndicator size="large" color="#0000ff" />
         ) : (
           skills.map((skill, index) => (

@@ -37,7 +37,9 @@ const welcome = () => {
                             <Ionicons name="close" size={40} color={COLORS.secondary} />
                         </TouchableOpacity>
                     </View> 
-                    <TouchableOpacity style={styles.menuCont}>
+                    <TouchableOpacity style={styles.menuCont}
+                        onPress={() => navigation.navigate('Home')}
+                    >
                         <Text style={styles.menutext}>Home</Text>
                     </TouchableOpacity>                  
                     <TouchableOpacity style={styles.menuCont}
