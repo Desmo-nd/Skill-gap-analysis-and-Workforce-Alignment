@@ -10,6 +10,7 @@ const Button = ({title, onPress,}) => {
     >
         <Text style={styles.btnTxt}>{title}</Text>
     </TouchableOpacity>
+    
   )
 }
 

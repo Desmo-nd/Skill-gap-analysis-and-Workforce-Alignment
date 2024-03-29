@@ -17,7 +17,7 @@ const HighDemand = () => {
     //         .catch(error => console.error(error));
     // }, []);
     useEffect(() => {
-        fetch('http://192.168.0.112:5000/high-demand-skills')
+        fetch('http://192.168.43.5:5000/high-demand-skills')
             .then(response => response.json())
             .then(data => {
                 // Shuffle the skills array

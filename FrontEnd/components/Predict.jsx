@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { View, TextInput, Text, StyleSheet, Modal, ScrollView } from 'react-native';
+import { View, TextInput, Text, StyleSheet, Modal, Linking } from 'react-native';
 import Button from './Button';
+import { COLORS } from '../constants';
 
 
 const Predict = () => {
@@ -14,7 +15,7 @@ const Predict = () => {
             const formData = new FormData();
             formData.append('skills', skills);
 
-            const response = await fetch('http://192.168.0.112:5000/predict', {
+            const response = await fetch('http://192.168.43.5:5000/predict', {
                 method: 'POST',
                 body: formData
             });
@@ -34,7 +35,9 @@ const Predict = () => {
         });
         return formattedPredictions.join('\n');
     };
-
+    const handlePress = () => {
+        Linking.openURL("https://learn-anything.xyz/");
+    };
     return (
         <View style={{marginTop:-30}}>
             <TextInput
@@ -61,6 +64,7 @@ const Predict = () => {
                     {/* <ScrollView> */}
                     <View style={styles.modalContainer}>
                         <Text style={styles.results}>{result}</Text>
+                        <Button style={{backgroundColor:COLORS.primary}} title="Learn"  onPress={handlePress} />
                         <Button title="Close" onPress={() => setModalVisible(false)} />
                     </View>
                     {/* </ScrollView> */}

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import{View, StyleSheet, Text, TouchableOpacity} from "react-native";
+import{View, StyleSheet, Text, TouchableOpacity, Linking} from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS, SIZES } from "../constants"
 import { BlurView } from 'expo-blur';
@@ -16,7 +16,9 @@ const welcome = () => {
         setIsmenuVisible(!isMenuVisible);
     }
     const navigation = useNavigation();
-
+    const handlePress = () => {
+        Linking.openURL("https://app.jobscan.co/scan/1");
+      };
     return (
         <View style={styles.firstContainer}>
             <View style={styles.logobar}>
@@ -47,9 +49,9 @@ const welcome = () => {
                     >
                         <Text style={styles.menutext}>Profile</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.menuCont}>
+                    <TouchableOpacity style={styles.menuCont} onPress={handlePress}>
                         <Text style={styles.menutext}>Upload Resume</Text>
-                    </TouchableOpacity>    
+                    </TouchableOpacity>     
                     <TouchableOpacity 
                         style={styles.menuCont} 
                         onPress={() => navigation.navigate('HighDemandJobs')}
@@ -126,7 +128,7 @@ const styles = StyleSheet.create({
     },
     menutext:{
         color: COLORS.secondary,
-        fontSize: 20,
+        fontSize: 16,
         fontFamily: 'semibold',
         marginVertical: 10,
     },

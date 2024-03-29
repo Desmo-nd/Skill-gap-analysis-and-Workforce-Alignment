@@ -47,7 +47,7 @@ const Login = (props) => {
   const login = async (values) => {
     setLoader(true);
     try {
-      const endpoint = "http://192.168.0.112:3000/api/login";
+      const endpoint = "http://192.168.43.5:3000/api/login";
       const data = values;
 
       const response = await axios.post(endpoint, data);
@@ -57,7 +57,7 @@ const Login = (props) => {
 
         await AsyncStorage.setItem('user' + response.data._id, JSON.stringify(response.data));
         await AsyncStorage.setItem("id", JSON.stringify(response.data._id));
-        navigation.replace('Home');
+        navigation.replace('Profile');
 
       } else {
         Alert.alert(

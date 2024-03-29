@@ -9,7 +9,7 @@ const HighDemandJobs = () => {
     const [jobs, setJobs] = useState([]);
 
     useEffect(() => {
-        fetch('http://192.168.0.112:5000/load_data')
+        fetch('http://192.168.43.5:5000/load_data')
             .then(response => response.json())
             .then(data => {
                 setJobs(data.high_demand_jobs);

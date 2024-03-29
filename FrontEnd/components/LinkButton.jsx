@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Text, TouchableOpacity, useWindowDimensions } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity, useWindowDimensions, Linking } from "react-native";
 import { COLORS, SIZES } from "../constants";
 
 const LinkButton = ({ title, onPress }) => {
@@ -8,10 +8,12 @@ const LinkButton = ({ title, onPress }) => {
   const buttonWidth = isSmallScreen ? '33%' : '40%'; 
   const fontSize = isSmallScreen ? 18 : 16;
   const marginTop = isSmallScreen ? 10 : 49; // Adjust the marginTop value for big screens
-
+  const handlePress = () => {
+    Linking.openURL("https://learn-anything.xyz/");
+};
   return (
     <TouchableOpacity 
-        onPress={onPress} 
+        onPress={handlePress} 
         style={[styles.btnStyle, { width: buttonWidth, marginTop }]}
     >
         <Text style={[styles.btnTxt, { fontSize }]}>{title}</Text>

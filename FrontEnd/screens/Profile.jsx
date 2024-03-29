@@ -35,7 +35,7 @@ const Profile = () => {
   }, []);
   
   const fetchSkills = (cleanedUserId) => {
-    axios.get(`http://192.168.0.112:3000/skill/${cleanedUserId}`)
+    axios.get(`http://192.168.43.5:3000/skill/${cleanedUserId}`)
       .then(response => {
         setSkills(response.data.skills);
         setLoading(false); 
@@ -53,7 +53,7 @@ const Profile = () => {
 
     const skillId = updatedSkills[index]._id; 
     // console.log('Skill ID:', skillId);
-    axios.patch(`http://192.168.0.112:3000/skill/${userId.replace(/"/g, '')}/update/${skillId}`, { completion: parseInt(value) })
+    axios.patch(`http://192.168.43.5:3000/skill/${userId.replace(/"/g, '')}/update/${skillId}`, { completion: parseInt(value) })
       .then(response => {
         console.log('Skill level updated:', response.data);
       })
@@ -65,7 +65,7 @@ const Profile = () => {
   const handleAddSkill = () => {
     if (newSkill && newCompletion >= 0 && newCompletion <= 100) {
       const skillData = { name: newSkill, completion: newCompletion };
-      axios.post(`http://192.168.0.112:3000/skill/${userId.replace(/"/g, '')}/add`, skillData) // Remove double quotes from userId
+      axios.post(`http://192.168.43.5:3000/skill/${userId.replace(/"/g, '')}/add`, skillData) // Remove double quotes from userId
         .then(response => {
           const newSkills = [...skills, response.data.Skill];
           setSkills(newSkills);
